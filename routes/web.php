@@ -26,3 +26,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/article', fn () => view('article.index'));
+});
